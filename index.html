@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="ERIK.JP — Games, RP e diversão.">
+  <title>ERIK.JP — Games · RP · Diversão</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="ERIK.JP início">
+      <span class="brand-crown">♛</span><span>ERIK<span class="brand-dot">.JP</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <button class="nav-item active" data-view="home"><span>⌂</span> Início</button>
+      <button class="nav-item" data-view="categories"><span>▦</span> Categorias</button>
+      <button class="nav-item" data-view="favorites"><span>☆</span> Favoritos</button>
+    </nav>
+    <div class="header-tools">
+      <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar..." aria-label="Buscar conteúdos"></label>
+      <span class="status-dot" title="ERIK.JP online"></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="homeView">
+      <div class="hero-logo-wrap">
+        <span class="hero-crown">♛</span>
+        <h1 class="hero-logo">ERIKF.JP</h1>
+      </div>
+      <p class="hero-tagline">GAMES <i>•</i> RP <i>•</i> DIVERSÃO</p>
+      <p class="hero-subtitle">JOGUE <i>•</i> ASSISTA <i>•</i> FAÇA PARTE</p>
+      <div class="platforms" aria-label="Plataformas">
+        <span title="Games">⌘</span><b></b><span title="GTA V">Ⅴ</span><b></b><span title="FiveM">Λ</span><b></b><span title="EA Sports">EA</span><b></b><span title="Steam">◉</span>
+      </div>
+    </section>
+
+    <section class="content-section" id="categorySection">
+      <div class="section-heading">
+        <h2><span class="heading-icon">▦</span> Categorias</h2>
+        <button class="text-action" id="showAllBtn">Ver todas <span>→</span></button>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="content-section links-section" id="linksSection">
+      <div class="section-heading">
+        <h2 id="linksHeading"><span class="heading-icon">▶</span> Conteúdos</h2>
+        <span class="count-label" id="linkCount">0 LINKS</span>
+      </div>
+      <div class="filter-row" id="filterRow"></div>
+      <div class="link-grid" id="linkGrid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#"><span>♛</span> ERIK.JP</a>
+    <div class="footer-copy">Links, conteúdos e muito mais.<br>Feito com dedicação para você.</div>
+    <div class="social-links"><a href="#" aria-label="YouTube">▶</a><a href="#" aria-label="Discord">◈</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="TikTok">♪</a><a href="#" aria-label="Steam">◉</a></div>
+  </footer>
+
+  <button class="secret-admin" id="secretAdmin" aria-label="Acesso administrativo" title="Acesso reservado">♛</button>
+
+  <div class="modal-backdrop" id="loginModal" aria-hidden="true">
+    <form class="login-card" id="loginForm" autocomplete="on">
+      <button type="button" class="modal-close" data-close="loginModal" aria-label="Fechar">×</button>
+      <span class="login-crown">♛</span>
+      <div class="login-logo">ERIK.JP</div>
+      <div class="login-overline">ÁREA ADMINISTRATIVA</div>
+      <p class="login-description">Faça login para acessar o painel.</p>
+      <label class="login-field"><span>♟</span><input id="adminUsername" name="username" autocomplete="username" placeholder="Usuário" required maxlength="64"></label>
+      <label class="login-field"><span>▣</span><input id="adminPassword" name="password" type="password" autocomplete="current-password" placeholder="Senha" required maxlength="200"></label>
+      <p class="login-message" id="loginMessage" role="status"></p>
+      <button class="login-submit" type="submit">↪ &nbsp; Entrar</button>
+      <div class="login-foot">— &nbsp; Acesso restrito &nbsp; —</div>
+    </form>
+  </div>
+
+  <div class="modal-backdrop" id="categoryModal" aria-hidden="true">
+    <form class="editor-card" id="categoryForm">
+      <button type="button" class="modal-close" data-close="categoryModal">×</button>
+      <h3 id="categoryModalTitle">Nova categoria</h3>
+      <label class="editor-field"><span>Nome da categoria</span><input id="categoryName" maxlength="32" required placeholder="Ex.: GTA RP"></label>
+      <label class="editor-field"><span>Imagem de capa (URL opcional)</span><input id="categoryCover" type="url" placeholder="https://..."></label>
+      <div class="editor-actions"><button type="button" class="button-muted" data-close="categoryModal">Cancelar</button><button class="button-light" type="submit">Salvar</button></div>
+    </form>
+  </div>
+
+  <div class="modal-backdrop" id="linkModal" aria-hidden="true">
+    <form class="editor-card" id="linkForm">
+      <button type="button" class="modal-close" data-close="linkModal">×</button>
+      <h3 id="linkModalTitle">Adicionar conteúdo</h3>
+      <label class="editor-field"><span>Título</span><input id="linkTitle" maxlength="90" required placeholder="Nome do vídeo"></label>
+      <label class="editor-field"><span>Link do vídeo</span><input id="linkUrl" type="url" required placeholder="https://..."></label>
+      <label class="editor-field"><span>Categoria</span><select id="linkCategory" required></select></label>
+      <label class="editor-field"><span>URL da capa</span><input id="linkCoverUrl" type="url" placeholder="https://... (opcional)"></label>
+      <label class="editor-field"><span>Ou enviar capa do dispositivo</span><input id="linkCoverFile" type="file" accept="image/*"></label>
+      <p class="editor-hint">Recomendado: imagem horizontal para a miniatura.</p>
+      <div class="editor-actions"><button type="button" class="button-muted" data-close="linkModal">Cancelar</button><button class="button-light" type="submit">Salvar conteúdo</button></div>
+    </form>
+  </div>
+
+  <div class="admin-bar" id="adminBar" hidden>
+    <span>PAINEL ADMINISTRATIVO ATIVO</span>
+    <button id="addCategoryBtn">＋ Categoria</button>
+    <button id="addLinkBtn">＋ Conteúdo</button>
+    <button id="logoutBtn">Sair</button>
+  </div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

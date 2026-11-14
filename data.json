@@ -1,0 +1,25 @@
+{
+  "categories": [
+    {
+      "id": "cat-gta",
+      "name": "CIDADES RP",
+      "cover": "https://cdn.discordapp.com/attachments/1550705694208950347/1571028005227077774/Cidades_RP__Noite_Urbana_Dramatica.png?ex=6af93d58&is=6af7ebd8&hm=12fbc6ed4a9e3552558f9e6c6737ce2ed96cbb18657f80ab95f6bd41a5a6a533"
+    },
+    {
+      "id": "cat-live",
+      "name": "MODS",
+      "cover": "https://cdn.discordapp.com/attachments/1550705694208950347/1571028349436829788/Mods_urbanos_com_coroa_e_carro_esportivo.png?ex=6af93daa&is=6af7ec2a&hm=65068ede900ba57adb4c7216e033183589a4bf71ab0067c054824608e7f53caa"
+    },
+    {
+      "id": "cat-shorts",
+      "name": "Vídeos curtos",
+      "cover": "https://cdn.discordapp.com/attachments/1550705694208950347/1571027413532545135/FiveM_b3258_GTAProcess_2026-11-02_00-31-23_3.png?ex=6af93ccb&is=6af7eb4b&hm=5884443b72ade24bf65298d160968046940b3a2bf63e323e301bde5f90ce0930"
+    },
+    {
+      "id": "cat-outros",
+      "name": "Outros",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDSlIqmAWWMS6x_SOEzsDTxU08RO9l1ux-ssR5QSyVh-I2Qf1MdYU5jRdl&s=10"
+    }
+  ],
+  "links": []
+}

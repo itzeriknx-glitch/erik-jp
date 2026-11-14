@@ -1,0 +1,9 @@
+{
+  "name": "erikjp-links",
+  "version": "2.1.0",
+  "private": true,
+  "description": "Site de links ERIK.JP com painel administrativo autenticado",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

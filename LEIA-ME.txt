@@ -1,0 +1,45 @@
+ERIK.JP — PROJETO ORGANIZADO PARA VS CODE
+
+ESTRUTURA
+- index.html       Estrutura das páginas e janelas.
+- css/styles.css   Todo o visual: cores, fundo, responsividade e efeitos.
+- js/app.js        Categorias, links, busca, favoritos e login no navegador.
+- assets/          Imagens do site.
+- server.js        Servidor Node.js e autenticação administrativa.
+- package.json     Configuração do projeto.
+- .env.example     Exemplo das variáveis privadas do administrador.
+
+COMO ABRIR NO VISUAL STUDIO CODE
+1. Extraia o ZIP para uma pasta.
+2. Abra o VS Code.
+3. Clique em Arquivo > Abrir Pasta e selecione a pasta erikjp_site.
+4. Edite index.html, css/styles.css ou js/app.js conforme o que deseja mudar.
+
+COMO EXECUTAR COM LOGIN REAL
+1. Instale Node.js 18 ou superior.
+2. Abra o terminal integrado do VS Code (Terminal > Novo Terminal).
+3. Configure as variáveis de ambiente antes de iniciar:
+
+   PowerShell (Windows):
+   $env:ADMIN_USER="seu_usuario"
+   $env:ADMIN_PASSWORD="uma_senha_forte_e_unica"
+   $env:SESSION_SECRET="uma_chave_aleatoria_com_pelo_menos_32_caracteres"
+   $env:PORT="3000"
+   node server.js
+
+4. Abra http://localhost:3000 no navegador.
+5. Clique no pequeno símbolo de coroa no canto inferior direito para abrir o login.
+6. Depois de entrar, o painel de administração aparece na parte inferior da tela.
+
+SEGURANÇA
+- Usuário e senha são definidos por você nas variáveis de ambiente; não há senha padrão.
+- A senha não fica no HTML nem no JavaScript público.
+- A autorização para salvar alterações é verificada no servidor.
+- Após 6 tentativas erradas, o IP fica temporariamente bloqueado por 10 minutos.
+- Sessão expira em 8 horas.
+- Ao publicar na internet, use HTTPS e configure NODE_ENV=production.
+- Nunca envie seu .env ou senha para o GitHub.
+- Faça backup de data.json, onde ficam categorias e links.
+
+VISUAL
+Fundo derivado da arte original, com desfoque, escala de cinza e escurecimento. Layout inspirado na referência: cabeçalho com navegação, logo central, cartões de categoria, miniaturas monocromáticas e janela de login central.
